@@ -16,3 +16,15 @@ console.log(li);
 link.setAttribute("target", "_blank");
 const listLink = document.querySelectorAll("a.link");
 listLink.forEach((item) => item.setAttribute("target", "_blank"));
+// 3. selector.removeAttribute("attribute",) -> Xoá attribute của selector
+const p = document.getElementById("spinner");
+p.removeAttribute("styles");
+// const p = document.querySelectorAll("#spinner");
+// p.forEach((item) => item.getAttribute("style"));
+// console.log(p);
+// 4. hasAttribute("attribute") -> kiểm tra selector có selector nào đó hay không, nếu có -> true ngược lại không có trả về false
+console.log(p.hasAttribute("class"));
+console.log(p.hasAttribute("id"));
+if (p.hasAttribute("id")) {
+   // do something here
+}
