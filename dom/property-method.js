@@ -12,3 +12,7 @@ console.log(li);
 // if (link) {
 
 // }
+// 2. selector.setAttribute("attribute", value) -> set giá trị cho attribute nào đó của selector
+link.setAttribute("target", "_blank");
+const listLink = document.querySelectorAll("a.link");
+listLink.forEach((item) => item.setAttribute("target", "_blank"));
