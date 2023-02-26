@@ -162,3 +162,20 @@ for (value of numbers) {
 for (let c of "evondev") {
    console.log(c);
 }
+
+const language = [
+   'Javascript',
+   'PHP',
+   'Java'
+]
+for (let value of language) {
+   console.log(value);
+}
+
+const myInfo = {
+   name: 'Chi Quoc',
+   age: 18
+}
+for (let value of Object.keys(myInfo)) {
+   console.log(value);
+}
