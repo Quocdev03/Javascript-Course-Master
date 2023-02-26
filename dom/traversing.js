@@ -20,4 +20,4 @@ console.log(span.firstElementChild); // <strong>
 // 5 . lastChild vs lastElementChild
 console.log(span.lastChild); // text
 console.log(span.lastElementChild); // <strong>
-// tới bài 134
+// 134
