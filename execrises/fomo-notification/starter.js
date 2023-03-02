@@ -22,7 +22,7 @@ const timer = setInterval(function () {
    const item = document.querySelector(".noti");
    if (item) item.parentNode.removeChild(item);
    // lấy ra random title
-   const random = randomData[(Math.floor(Math.random() * randomData.length))];
+   const title = randomData[(Math.floor(Math.random() * randomData.length))];
    if (lastTitle !== title) {
       createNotification(title);
    }
