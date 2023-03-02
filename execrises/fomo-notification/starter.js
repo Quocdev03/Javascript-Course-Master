@@ -11,7 +11,7 @@ function createNotification(title = "Welcome to notification") {
 </div>`;
    document.body.insertAdjacentHTML("afterbegin", template);
 }
-let lassTitle;
+let lastTitle;
 const randomData = [
    "Welcome to javascript course",
    "Welcome to this tutorial",
@@ -22,9 +22,9 @@ const timer = setInterval(function () {
    const item = document.querySelector(".noti");
    if (item) item.parentNode.removeChild(item);
    // lấy ra random title
-   const title = randomData[(Math.floor(Math.random() * randomData.length))]
-   if (lassTitle !== title) {
+   const random = randomData[(Math.floor(Math.random() * randomData.length))];
+   if (lastTitle !== title) {
       createNotification(title);
    }
-   lassTitle = title;
+   lastTitle = title;
 }, 5000)
