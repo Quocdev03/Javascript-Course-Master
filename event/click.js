@@ -33,4 +33,9 @@ button.addEventListener("click", function (event) {
    console.log(`event.Currtarget: ${event.currentTarget}`);
    // event.currentTarget: nó sẽ chọn chính xác phần mà mình click tới
 })
-// tới 154
+// event.preventDefault(): ngăn chặn vi default
+const link = document.querySelector(".link");
+link.addEventListener("click", function (e) {
+   e.preventDefault();
+   console.log("click me");
+})
