@@ -1,7 +1,7 @@
 const buttonMinus = document.querySelector(".counter-descrease");
 const buttonPlus = document.querySelector(".counter-increase");
 const counterNumber = document.querySelector(".counter-number");
-let counterValue = counterNumber.textContent;
+let counterValue = parseInt(counterNumber.textContent);
 console.log(counterValue)
 buttonPlus.addEventListener("click", function () {
    if (counterValue >= 10) {
@@ -19,3 +19,4 @@ buttonMinus.addEventListener("click", function () {
    // counterValue = counterValue - 1;
    // counterValue -= 1;
 })
+// xong 156
