@@ -19,4 +19,3 @@ buttonMinus.addEventListener("click", function () {
    // counterValue = counterValue - 1;
    // counterValue -= 1;
 })
-// xong 156

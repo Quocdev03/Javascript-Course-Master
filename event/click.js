@@ -35,7 +35,19 @@ button.addEventListener("click", function (event) {
 })
 // event.preventDefault(): ngăn chặn vi default
 const link = document.querySelector(".link");
-link.addEventListener("click", function (e) {
-   e.preventDefault();
-   console.log("click me");
-})
+link.addEventListener("click", function (event) {
+   event.preventDefault();
+   // Lấy custom attribute data-abc
+   // .dataset.name
+   const name = event.target.dataset.nameAbc;
+   console.log(name);
+   // console.log("click me");
+   // console.log()
+   // selector.style.property = value
+   // event.target.style.property = value
+   // console.log(event.target);
+   // console.log(event.target.style);
+   // event.target.style.color = "red"
+   // background-color => backgroundColor
+   // position -> position
+});
