@@ -1,20 +1,22 @@
 const tabItem = document.querySelectorAll(".tab-item");
 const tabContent = document.querySelectorAll(".tab-content");
-// Chuyển tabItem thành mảng
+// Chuyển thành mảng
 [...tabItem].forEach(item => item.addEventListener('click', handleTabClick));
 function handleTabClick(event) {
-   // Xoá hết tất cả class active ở các tab item
+   // Xoá class active khi nhấn vào tabItem
    [...tabItem].forEach(item => item.classList.remove("active"));
-   // sau đó add class active vào tab vừa click
+   // Thêm class active khi click vào tabItem
    event.target.classList.add("active");
-   // Phần tabContent
-   // Lấy data-tab từ nút button
-   const tabNumber = event.target.dataset.tab;
+   // Active tabContent
+   // Lấy dataset từ tabItem
+   const tabNumber = (event.target.dataset.tab);
+   // Xoá class active từ tabContent khi tabItem được click vào
    [...tabContent].forEach(item => {
       item.classList.remove("active");
+      // Check điều kiện để thêm class
+      // Nếu data-tab của tabContent === với data-tab với tabItem thì add class active
       if (item.getAttribute("data-tab") === tabNumber) {
          item.classList.add("active");
       }
-   });
-   // [...tabContent][tabNumber-1].classList.add("active");
+   })
 }
