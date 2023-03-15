@@ -11,14 +11,15 @@ dropdownSelect.addEventListener('click', function (event) {
 });
 // Dropdown item
 dropdownItems.forEach((item) => {
-   item.addEventListener('click', function (event) {
-      const text = event.target.querySelector(".dropdown__text").textContent;
+   item.addEventListener('click', function (e) {
+      const text = e.target.querySelector(".dropdown__text").textContent;
       dropdownSelected.textContent = text;
       dropdownList.classList.remove("show");
    })
 });
 // Click to document
 document.addEventListener('click', function (e) {
+   // Nếu dropdown không chứa target mà mình click vào
    if (!dropdown.contains(e.target)) {
       dropdownList.classList.remove("show");
    }
