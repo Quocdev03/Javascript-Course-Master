@@ -17,4 +17,3 @@ window.addEventListener('load', function () {
       line.style.width = 0;
    })
 });
-// 185
