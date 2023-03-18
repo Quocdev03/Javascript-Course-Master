@@ -2,18 +2,15 @@ body {
    font-family: "Poppins", sans-serif;
    font-size: 16px;
    line-height: 1;
-   height: 500vh;
 }
 
-.button {
-   padding: 20px;
-   color: white;
-   background-color: #ffa400;
-   border: 0;
-   margin: 50px auto;
-   width: 300px;
-   display: block;
+.input {
+   padding: 15px;
+   border: 1px solid #eee;
+   outline: none;
+   font-size: 15px;
    font-family: "Poppins", sans-serif;
-   cursor: pointer;
-   z-index: 10;
+   width: 300px;
+   margin: 50px auto;
+   display: block;
 }
