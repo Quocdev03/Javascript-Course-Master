@@ -2,15 +2,17 @@ body {
    font-family: "Poppins", sans-serif;
    font-size: 16px;
    line-height: 1;
+   min-height: 500vh;
 }
 
-.input {
-   padding: 15px;
-   border: 1px solid #eee;
-   outline: none;
-   font-size: 15px;
-   font-family: "Poppins", sans-serif;
-   width: 300px;
-   margin: 50px auto;
-   display: block;
+.boxed {
+   width: 200px;
+   height: 200px;
+   background-color: orange;
+   overflow: auto;
+}
+
+.boxed-content {
+   height: 600px;
+   width: 600px;
 }
