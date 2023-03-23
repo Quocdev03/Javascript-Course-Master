@@ -25,8 +25,13 @@ function debounceFn(func, wait, immediate) {
 // scrollWisth: trả về chiều rộng của elemnt bao gồm padding nhưng không có border;
 const boxed = document.querySelector(".boxed");
 boxed.addEventListener("scroll", function (e) {
-   console.log(boxed.scrollTop);
-   console.log(boxed.scrollLeft);
+   // console.log(boxed.scrollTop);
+   // console.log(boxed.scrollLeft);
 });
 boxed.scroll(100, 200);
-// tới 209
+// scroll(x,y)
+// 5. scrollWidth vs offsetWidth
+// boxed.offetWidth -> 200
+// boxed.scrollWidth -> 200
+// 6. scrollIntoview(): scroll tới phạm vi mà có thể nhận thấy nó
+// 210
