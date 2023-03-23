@@ -34,4 +34,3 @@ boxed.scroll(100, 200);
 // boxed.offetWidth -> 200
 // boxed.scrollWidth -> 200
 // 6. scrollIntoview(): scroll tới phạm vi mà có thể nhận thấy nó
-// 210
