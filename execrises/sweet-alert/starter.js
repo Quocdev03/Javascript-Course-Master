@@ -12,7 +12,8 @@ window.addEventListener("load", function () {
       const sweetItem = document.querySelector(".sweet-alert");
       if (sweetItem) {
          setTimeout(function () {
-            document.querySelector(".sweet-alert").remove();
+            // document.querySelector(".sweet-alert").remove();
+            sweetItem.parentElement.removeChild(sweetItem);
          }, 2000);
       }
    });
