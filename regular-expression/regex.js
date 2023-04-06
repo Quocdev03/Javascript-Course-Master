@@ -3,7 +3,7 @@
 const re1 = /hello/;
 const re2 = new RegExp("Hello");
 // hello world
-// regx.test(value) -> true or false 
+// regx.test(value) -> true or false
 console.log(re1.test("hello"));
 // 2. anchor ^ S
 // ^ string bắt đầu với từ nào trong đó
@@ -30,4 +30,43 @@ console.log(re1.test("hello"));
 // Phủ định
 /[^a-z]/.test("a"); // false
 // 4. Meta characters
-// tới 233
+// \d: Khớp với số nó sẽ tương đương với [0-9]
+/\d/.test("1234"); // true
+// \D: ngược lại với \d [^0-9]
+/\D/.test("123"); // false
+// \w: khớp với các kí tự và dấu gạch dưới và số, nó sẽ tương đương [a-zA-Z0-9_]
+/\w/.test("_"); // true
+// \W: ngược lại với \ư tương đương [^a-zA-Z0-9_]
+/\W/.test("_"); // false
+// \s: khớp với lại kí tự khoảng trắng: spaces,tab, newline
+/\s/.test(" "); // false
+// \S: các kí tự không phải khoảng trắng
+/\S/.test(" "); // false
+// \n: khớp vói newline (Xuống hàng)
+// \t: khớp với lại tab character
+// .: khớp với tất cả mọi thứ ngoại trừ newline(\n);
+// [^]: khớp với tất cả mọi thứ bao gồm newline(\n);
+
+// 5.Quantifiers: {n}, {n,m} + ? *
+// string.natch(regex) "abc".match(/\W/) -> []
+// {n} số lượng nhất định 
+// {n,m} số lượng nhất định trong khoảng từ n đến m
+// +: lấy 1 hoặc nhiều kí tự thoả điều kiện
+const str1 = "wellcome to 20224523453241";
+console.log(str1.match(/\d\d\d\d/)[0]);
+console.log(str1.match(/\d{4}/)[0]);
+console.log(str1.match(/\d{4,6}/)[0]);
+console.log(str1.match(/\d+/)[0]);
+const srt2 = "color or colour?";
+// có thể có hoặc không có kí tự nào đó
+console.log(srt2.match(/colou?r/g)); // ["color", "colour"]
+// flag
+// g: global
+// i: case insensitive
+// m: multipe lines
+// *: không có hoặc là nhiều
+const srt3 = " ";
+console.log(srt3.match(/\d?/g));
+// 6. groups ()
+/(\d{3})?(\w+)/.test("123"); // false
+// tới 237
