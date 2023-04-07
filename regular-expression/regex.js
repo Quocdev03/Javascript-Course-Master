@@ -69,4 +69,19 @@ const srt3 = " ";
 console.log(srt3.match(/\d?/g));
 // 6. groups ()
 /(\d{3})?(\w+)/.test("123"); // false
-// tới 237
+// 7. Escaping \ / [ ] () { } ? + * . ^ $
+/\?/.test("?");
+/\*/.test("*");
+// 8. Doundaries \b \B
+// \b: khi đứng 1 mình độc lập
+"my name is evondev".match(/\bevondev/g); // ["evondev"]
+// \B: khi có trước nó
+"my name is isevondev".match(/\Bevondev/g);
+// 9.
+const str4 = "hello welcome hello to my hello";
+// console.log(str4.replace("hello", "hi")); // hi welcome to my hello
+// console.log(str4.replace("hello", "evondev")); // hi welcome to my evondev
+console.log(str4.replace("hello", "evondev")); // hi welcome to my evondev
+// string.replace(regex,value);
+str4.replace(/hello/g, "evondev");
+"1234567".match(/\d+/g);
