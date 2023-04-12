@@ -15,6 +15,6 @@ emailInput.addEventListener("input", function (e) {
       e.target.classList.add("invalid");
    }
    if (!value) {
-      e.target.classList.remove("remove");
+      e.target.classList.remove("invalid");
    }
 });
