@@ -1,35 +1,38 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 body {
-  margin: 20px 0;
-  background: #6589f9;
+   margin: 20px 0;
+   background: #6589f9;
 }
+
 .grid {
-  max-width: 660px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+   max-width: 660px;
+   margin: 0 auto;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
 }
 
 .card {
-  margin: 5px;
-  background-color: #6589f9;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 150px;
-  width: 150px;
+   margin: 5px;
+   background-color: #6589f9;
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center center;
+   height: 150px;
+   width: 150px;
 }
+
 .card.matched {
-  border: 0;
-  background-image: none !important;
-  pointer-events: none;
+   border: 0;
+   background-image: none !important;
+   pointer-events: none;
 }
+
 /* Uncomment this later
 .card {
   position: relative;
@@ -68,4 +71,4 @@ body {
 .matched .front {
   background: #6589f9 !important;
 }
-*/
+ */
