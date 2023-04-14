@@ -53,4 +53,3 @@ window.addEventListener("load", function () {
       dotItems[index].classList.add("active");
    }
 });
-//275
