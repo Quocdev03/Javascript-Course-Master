@@ -37,7 +37,6 @@ body {
    position: relative;
    transition: all 0.4s linear;
    transform-style: preserve-3d;
-   /* background: none !important; */
 }
 
 .card,
