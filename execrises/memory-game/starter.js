@@ -63,7 +63,9 @@ function generateCard() {
       grid.appendChild(card);
    });
 }
+
 generateCard();
+
 function matchingCard() {
    const selects = document.querySelectorAll(".selected");
    [...selects].forEach((item) => item.classList.add("matched"));
