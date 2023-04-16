@@ -16,3 +16,12 @@ for (let it of params.values()) {
    console.log(it);
 }
 params.delete("page");
+// 2. History
+console.log(window.history);
+// history.back(); // quay lại trang trước đó
+// history.forward(); // tới trang kế tiếp nếu có
+// history.go(-1); // trả về trang trước đó
+// 3. Navigatior
+// check thông tin như thiết bị, trình duyệt
+console.log(navigator.userAgent);
+
