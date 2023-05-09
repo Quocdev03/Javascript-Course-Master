@@ -20,4 +20,3 @@ function Student(name, age) {
 }
 let student2 = new Student("john", 40);
 console.log(student2);
-// tới 293
