@@ -1,7 +1,19 @@
 // MVC: Model View Controller
 
 class Modal {
-   constructor() { }
+   constructor() {
+      this.todos = [];
+   }
+   addTodo(todoText) {
+      if (todoText.length > 0) {
+         this.todos.push(todoText);
+      }
+   }
+
+   removeTodo(todoText) {
+      const index = this.todos.findIndex((item) => item === todoText);
+      this.todos.splice(index, 1);
+   }
 }
 class View {
    constructor() {
@@ -22,8 +34,8 @@ class View {
 
       this.form.append(this.input, this.submit);
 
-      this.todoLisst = this.createElement("div", "todo-list");
-      this.todoWrapper.append(this.form, this.todoLisst);
+      this.todoList = this.createElement("div", "todo-list");
+      this.todoWrapper.append(this.form, this.todoList);
       this.app.append(this.todoWrapper);
    }
 
@@ -55,18 +67,57 @@ class View {
             span.textContent = todoText;
             const icon = this.createElement("i");
             icon.className = "fa fa-trash todo-remove";
+            icon.setAttribute("data-value", todoText);
 
-            div.append(span, icon);
+            todoItem.append(span, icon);
 
-            this.todoLisst.append(todoItem)
-         })
+            this.todoList.append(todoItem);
+         });
       }
+   }
+
+   viewAddTodo(handler) {
+      this.form.addEventListener("submit", e => {
+         e.preventDefault();
+         if (this._todoValue) {
+            handler(this._todoValue)
+            this._resetValue();
+         }
+      });
+   }
+
+   viewRemoveTodo(handler) {
+      this.todoLisst.addEventListener("click", e => {
+         if (e.target.matches(".todo-remove")) {
+            const value = e.target.dataset.value;
+            handler(value);
+         }
+      });
    }
 }
 class Controller {
    constructor(modal, view) {
       this.modal = modal;
       this.view = view;
+      // this.modal.addTodo("evondev");
+      // this.view.displayTodos(this.modal.todos);
+      this.view.viewAddTodo(this.handlerAddTodo);
+      this.view.removeTodo(this.removeTodo);
+
+      this.handleTodoChange(this.modal.todos);
+
+   }
+
+   handleTodoChange = todos => {
+      this.view.displayTodos(todos);
+   }
+
+   handlerAddTodo = todoText => {
+      this.modal.addTodo(todoText);
+   }
+   handleRemoveTodo = todoText => {
+      this.modal.removeTodo(todoText);
    }
 }
 const app = new Controller(new Modal(), new View());
+// Xong 306
