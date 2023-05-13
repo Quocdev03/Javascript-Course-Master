@@ -4,6 +4,16 @@ class Modal {
    constructor() {
       this.todos = [];
    }
+
+   handleTodoChange(handler) {
+      this.todoListChange = handler;
+
+   }
+
+   _reload(todos) {
+      this.todoListChange(todos);
+   }
+
    addTodo(todoText) {
       if (todoText.length > 0) {
          this.todos.push(todoText);
@@ -12,7 +22,8 @@ class Modal {
 
    removeTodo(todoText) {
       const index = this.todos.findIndex((item) => item === todoText);
-      this.todos.splice(index, 1);
+      this.todos = this.todos.splice(index, 1);
+      this._reload(thos.todos);
    }
 }
 class View {
@@ -101,6 +112,7 @@ class Controller {
       this.view = view;
       // this.modal.addTodo("evondev");
       // this.view.displayTodos(this.modal.todos);
+      this.modal.handleTodoChange(this.handleTodoChange);
       this.view.viewAddTodo(this.handlerAddTodo);
       this.view.removeTodo(this.removeTodo);
 
@@ -120,4 +132,4 @@ class Controller {
    }
 }
 const app = new Controller(new Modal(), new View());
-// Xong 306
+// tới 310
