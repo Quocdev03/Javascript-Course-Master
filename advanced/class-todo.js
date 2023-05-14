@@ -2,28 +2,29 @@
 
 class Modal {
    constructor() {
-      this.todos = [];
+      this.todos = JSON.parse(localStorage.getItem("todoList")) || [];
    }
 
    handleTodoChange(handler) {
       this.todoListChange = handler;
-
    }
 
    _reload(todos) {
       this.todoListChange(todos);
+      localStorage.setItem("todoList", JSON.stringify(todos));
    }
 
    addTodo(todoText) {
       if (todoText.length > 0) {
          this.todos.push(todoText);
       }
+      this._reload(this.todos);
    }
 
    removeTodo(todoText) {
       const index = this.todos.findIndex((item) => item === todoText);
-      this.todos = this.todos.splice(index, 1);
-      this._reload(thos.todos);
+      this.todos.splice(index, 1);
+      this._reload(this.todos);
    }
 }
 class View {
@@ -71,6 +72,9 @@ class View {
    }
 
    displayTodos(todos) {
+      while (this.todoList.firstChild) {
+         this.todoList.removeChild(this.todoList.firstChild);
+      }
       if (todos.length > 0) {
          [...todos].forEach(todoText => {
             const todoItem = this.createElement("div", "todo-item");
@@ -98,8 +102,10 @@ class View {
    }
 
    viewRemoveTodo(handler) {
-      this.todoLisst.addEventListener("click", e => {
+      this.todoList.addEventListener("click", e => {
          if (e.target.matches(".todo-remove")) {
+            const todo = e.target.parentNode;
+            todo.parentNode.removeChild(todo);
             const value = e.target.dataset.value;
             handler(value);
          }
@@ -114,7 +120,7 @@ class Controller {
       // this.view.displayTodos(this.modal.todos);
       this.modal.handleTodoChange(this.handleTodoChange);
       this.view.viewAddTodo(this.handlerAddTodo);
-      this.view.removeTodo(this.removeTodo);
+      this.view.viewRemoveTodo(this.handleRemoveTodo);
 
       this.handleTodoChange(this.modal.todos);
 
@@ -132,4 +138,3 @@ class Controller {
    }
 }
 const app = new Controller(new Modal(), new View());
-// tới 310
