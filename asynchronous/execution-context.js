@@ -20,6 +20,18 @@ console.log(y); // the 100
  * this: window
  * x: 10
  * timesTen: function(){}
- * y: timesTen(x)
+ * y: timesTen(x) -> 100
  */
-// tới 314
+// function execution context
+// creation phase
+/**
+ * Global object: arguments
+ * this: window
+ * a: undefine
+ */
+// execution phase
+/**
+ * Global object: arguments
+ * this: window
+ * a: 10
+ */
