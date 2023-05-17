@@ -19,5 +19,6 @@ let result = average(10, 20);
  * global()
  */
 /**
- * 
+ *
  */
+// tới 316
