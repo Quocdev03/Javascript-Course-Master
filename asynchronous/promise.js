@@ -90,6 +90,8 @@ function makePromise(byIphone) {
 // }, 3000);
 
 // Promise.all
+// Trả về resole khi tất cả Promise truyền vào đều là resole
+// Trả về reject khi tất cả Promise truyền vào đều là reject
 function makeTimer(timer = 1000, str) {
    return new Promise(function (resole, reject) {
       setTimeout(() => {
@@ -105,6 +107,52 @@ const timerTotal = Promise.all([timer1, timer2, timer3]).then((data) => {
 });
 // Promise.race
 const timerTotal2 = Promise.race([timer1, timer2, timer3]).then((data) => {
+   // console.log(data);
+});
+// Promise.allSettled
+function isFrontendDev(language) {
+   return new Promise(function (resole, reject) {
+      if (!language.includes("html")) {
+         reject("you are front end developer");
+      }
+      setTimeout(() => {
+         resole("you are not front end developer");
+      }, 1000)
+   });
+}
+const dev1 = isFrontendDev(["html", "css"]);
+const dev2 = isFrontendDev(["css"]);
+// const devAll = Promise.all([dev1, dev2]).then((data) => {
+//    console.log(data);
+// });
+// const devRace = Promise.race([dev1, dev2]).then((data) => {
+//    console.log(data);
+// });
+const devRace = Promise.allSettled([dev1, dev2]).then((data) => {
    console.log(data);
-})
-// tói 324
+});
+// Try catch
+function isFrontendDevv2(language) {
+   if (!language.includes("html")) {
+      throw new Error("you are front end developer");
+   }
+   return new Promise(function (resole, reject) {
+      setTimeout(() => {
+         resole("you are not front end developer");
+      }, 1000)
+   });
+}
+try {
+   isFrontendDevv2(["css"]).then((data) => {
+      console.log(data);
+   }).catch((err) => {
+      console.log(err);
+   })
+
+}
+catch (error) {
+   console.log(" error");
+} finally {
+   console.log("demo");
+}
+// tới 326
