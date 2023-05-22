@@ -48,12 +48,10 @@ function isFrontendDev(language) {
    });
 }
 async function go() {
-   const dev1 = await isFrontendDev(["css"]);
+   const dev1 = await isFrontendDev(["html"]);
    console.log(dev1);
    return dev1;
 }
 // console.log(go());
-go()
-   .then()
-   .catch((err) => console.log(err));
+go().catch((err) => console.log(err));
 
