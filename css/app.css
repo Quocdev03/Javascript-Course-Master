@@ -66,7 +66,7 @@ body {
    line-height: 1;
 }
 
-.todo {
+/* .todo {
    padding: 25px;
    margin: 25px auto;
    max-width: 600px;
@@ -124,4 +124,68 @@ body {
    display: flex;
    justify-content: center;
    align-items: center;
+} */
+
+.joke {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 100px 50px;
+   border: 1px solid white;
+   border-radius: 8px;
+}
+
+.joke-heading {
+   font-size: 30px;
+   font-weight: 500;
+   line-height: 1.5;
+   margin-bottom: 30px;
+   text-align: center;
+}
+
+.joke-button {
+   border: 0;
+   outline: none;
+   height: 55px;
+   width: 100%;
+   max-width: 200px;
+   border-radius: 8px;
+   color: white;
+   background-color: #20e3b2;
+   position: relative;
+   cursor: pointer;
+}
+
+.loader {
+   width: 20px;
+   height: 20px;
+   border: 3px solid white;
+   border-left: 3px solid transparent;
+   border-radius: 50%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   animation: spin 1s infinite linear forwards;
+   display: none;
+}
+
+@keyframes spin {
+   to {
+      transform: translate(-50%, -50%) rotate(360deg);
+   }
+}
+
+.joke.is-loading .joke-button {
+   opacity: .5;
+   pointer-events: none;
+}
+
+.joke.is-loading .joke-button .loader {
+   display: block;
+}
+
+.joke.is-loading .joke-button span {
+   display: none;
 }
