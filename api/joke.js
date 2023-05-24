@@ -18,4 +18,3 @@ async function handleClick() {
    jokeWrapper.classList.remove("is-loading");
 }
 jokeButton.addEventListener("click", handleClick);
-// tới 334
